@@ -38,7 +38,7 @@ async function login(form: LoginForm): Promise<Response> {
     }
     return { status: response.ok, ...res };
   } catch (error: any) {
-    return JSON.parse(error);
+    return { status: false, message: JSON.stringify(error.message) };
   }
 }
 
