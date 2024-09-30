@@ -16,9 +16,9 @@ interface Response {
 const config = {
   maxAge: 60 * 60 * 11,
   path: "/",
-  domain: process.env.HOST ?? "localhost",
+  domain: process.env.NEXT_PUBLIC_HOST ?? "localhost",
   httpOnly: true,
-  secure: process.env.NODE_ENV === "production",
+  secure: process.env.NEXT_PUBLIC_NODE_ENV === "production",
 };
 
 async function login(form: LoginForm): Promise<Response> {
